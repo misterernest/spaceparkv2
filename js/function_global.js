@@ -11,6 +11,16 @@ Funcion que pinta los cuadros
      cliente=""
    ){
      if(context){
+       let sizeText = "1.3rem";
+       if (zoom) {
+         sizeText = "2rem";
+       }
+       let grados = 0;
+       let size = sizeX;
+       if(sizeX < sizeY){
+         grados = 90;
+         size = sizeY;
+       }
        context.lineWidth = 0.5;
        context.strokeStyle = "#00f";
        context.fillStyle = colorCategoria;
@@ -27,14 +37,19 @@ Funcion que pinta los cuadros
          sizeY
        );
        context.textAlign="center";
-       context.font="bold 1rem";
+       context.textBaseline="middle";
+       context.font="normal small-caps bold " + sizeText + " arial";
        context.fillStyle = "black";
+       context.translate(coordenada[0] + sizeX/2, coordenada[1]+ sizeY/2);
+       context.rotate(Math.PI/180 * grados);
        context.fillText(
          cliente,
-         coordenada[0]+sizeX/2,
-         coordenada[1]+sizeY/2,
-         sizeX
+         0,
+         0,
+         size - 10
        );
+       context.rotate(Math.PI/180 * -grados);
+       context.translate(-coordenada[0] - sizeX/2, -coordenada[1] - sizeY/2);
      }
    }
 
