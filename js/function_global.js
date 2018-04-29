@@ -39,7 +39,7 @@ Funcion que pinta los cuadros
        context.textAlign="center";
        context.textBaseline="middle";
        context.font="normal small-caps bold " + sizeText + " arial";
-       context.fillStyle = "black";
+       context.fillStyle = "white";
        context.translate(coordenada[0] + sizeX/2, coordenada[1]+ sizeY/2);
        context.rotate(Math.PI/180 * grados);
        context.fillText(
