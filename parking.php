@@ -94,18 +94,17 @@
       .cal{
 
         width: 40%;
-        margin: 0 auto;
-        float: right;
+        margin: 1rem auto 0;
+        margin-top: 5.5rem;
 
       }
 
       .cal>h2{
-        margin-top: 10%;
-        /*height: 80%;*/
       }
     </style>
-    <div class="cal">
-      <?php include 'calendario_p.php' ?>
+    <div class="cal" id="calendar">
+        <?php include 'calendario_p.php' ?>
+
     </div>
     <!-- finaliza -->
 

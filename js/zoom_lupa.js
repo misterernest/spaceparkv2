@@ -4,6 +4,7 @@ Hace el zoom en el DOM
 function zoomDo(canvas1, context1, canvas2, context2, canvas3, context3){
   if (zoom) {
     zoom = false;
+    $('#calendar').removeAttr("hidden", "hidden");
     $('#zoom-in').removeAttr("hidden");
     $('#gant').removeAttr("hidden");
     $('#session').removeAttr("hidden");
@@ -31,6 +32,7 @@ function zoomDo(canvas1, context1, canvas2, context2, canvas3, context3){
     recorreConsulta(respuestaConsulta, context3, canvas3);
   }else{
     zoom = true;
+    $('#calendar').attr("hidden", "hidden");
     $('#zoom-out').removeAttr("hidden");
     $('#zoom').removeClass("btn-lupa1");
     $('#zoom').addClass("btn-lupa2");

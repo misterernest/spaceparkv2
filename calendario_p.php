@@ -153,9 +153,7 @@
   </script>
  </head>
  <body>
-  <br />
-  <h2 align="center"><a href="calendar.php" target="_blank">Calendario de Reservas</a></h2>
-  <br />
+   <h2 align="center"><a href="calendar.php" target="_blank">Calendario de Reservas</a></h2>
   <div class="container">
    <div id="calendar"></div>
   </div>
