@@ -65,11 +65,11 @@ isset($_POST['comentario']))  {
 
 		if ($valido) {
 			// Sentencia query para deshacer
-			$contraquery= "DELETE FROM `area_ocupada` ";
-			$contraquery.="WHERE coordenada_x =`$xPost` ";
-			$contraquery.="AND coordenada_y = `$yPost` ";
-			$contraquery.="AND fecha_incial = `$date` ";
-			$contraquery.="AND fecha_final = `$date2 $time2`;";
+			$contraquery= "DELETE FROM \'area_ocupada\' ";
+			$contraquery.="WHERE coordenada_x =\'$xPost\' ";
+			$contraquery.="AND coordenada_y = \'$yPost\' ";
+			$contraquery.="AND fecha_incial = \'$date\' ";
+			$contraquery.="AND fecha_final = \'$date2 $time2\';";
 			// termina proceso cache Insert
 			//insert
 
