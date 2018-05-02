@@ -55,7 +55,7 @@
   <div class="btn-park btn-eliminar1" id="eliminar">
     <img src="img/eliminar.png" alt="lupa-zoom-in" id="zoom-in">
   </div>
-  <a href="gantt.php" target="_blank">
+  <a href="calendar.php" target="_blank">
     <div class="btn-park btn-gant" id="gant">
       <img src="img/diagrama-grant.png" alt="Diagrama Gant">
     </div>
