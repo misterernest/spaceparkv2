@@ -85,15 +85,15 @@ function pintaAreaOcupada(objConsulta, context){
 }
 /* Funcion que activa o desactiva el deshacer */
 function deshacerButton(){
-  if(respuestaConsulta.deshacer[0] > 0){
+  if(cantDeshacer > 0){
     btn_deshacer=true;
     $("#deshacer").removeClass('btn-inactivo');
   }
 }
 /* Recorre el objeto de consulta */
 function recorreConsulta(arrayConsulta, context, canvas){
-  respuestaConsulta = arrayConsulta;
-  console.log(respuestaConsulta);
+  respuestaConsulta = arrayConsulta[0];
+  cantDeshacer = arrayConsulta[1][0];
   deshacerButton();
   let fechaInicialArray = new Date();
   let fechaFinalArray = new Date();

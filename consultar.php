@@ -19,14 +19,19 @@ if ( isset($_POST['date']) && !empty($_POST['date']) && isset($_POST['dias']) &&
 	require_once 'config.php';
 
 	// insert
-    $query = "SELECT * FROM area_ocupada WHERE fecha_incial BETWEEN '$nuevafechai' AND '$nuevafechaf' OR fecha_final BETWEEN '$nuevafechai' AND '$nuevafechaf '";
+  $query = "SELECT * FROM area_ocupada WHERE fecha_incial BETWEEN '$nuevafechai' AND '$nuevafechaf' OR fecha_final BETWEEN '$nuevafechai' AND '$nuevafechaf '";
 	/*if(!empty($categoria)){
 		$query = $query . " AND categoria LIKE '$categoria'";
 	}*/
 
-    $prepared = $pdo->query($query);
-	$resultado = $prepared->fetchAll(PDO::FETCH_ASSOC);
-    $prepared = null;
+	$prepared = $pdo->query($query);
+	$resultado[0] = $prepared->fetchAll(PDO::FETCH_ASSOC);
+	$prepared = null;
+
+	$sql="SELECT COUNT(id_cache) FROM cache";
+	$prepared = $pdo->prepare($sql);
+	$prepared->execute();
+	$resultado[1]= $prepared->fetch(PDO::FETCH_NUM);
 	echo json_encode($resultado);
 }
 ?>
