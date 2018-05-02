@@ -43,6 +43,9 @@
     <img src="img/lupa-mas.png" alt="lupa-zoom-in" id="zoom-in">
     <img src="img/lupa-menos.png" alt="lupa-zoom-out" id="zoom-out" hidden="hidden">
   </div>
+  <div class="btn-park btn-inactivo btn-rollback" id="atras">
+    <img src="img/atras.jpeg" alt="lupa-zoom-in" id="zoom-in">
+  </div>
   <div class="btn-park btn-mover1" id="mover">
     <img src="img/mover.png" alt="lupa-zoom-in" id="zoom-in">
   </div>
