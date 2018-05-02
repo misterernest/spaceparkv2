@@ -1,5 +1,7 @@
 ﻿<?php
-echo “Hola mundo”;
+
+echo "Hola Mundo";
+
 $user = null;
 $query = null;
 if (!empty($_POST)) {
