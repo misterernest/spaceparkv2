@@ -83,10 +83,17 @@ function pintaAreaOcupada(objConsulta, context){
     )
   }
 }
-
+/* Funcion que activa o desactiva el deshacer */
+function deshacerButton(){
+  if(respuestaConsulta.deshacer[0] > 0){
+    btn_deshacer=true;
+    $("#deshacer").removeClass('btn-inactivo');
+  }
+}
 /* Recorre el objeto de consulta */
 function recorreConsulta(arrayConsulta, context, canvas){
   respuestaConsulta = arrayConsulta;
+  deshacerButton();
   let fechaInicialArray = new Date();
   let fechaFinalArray = new Date();
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -121,7 +128,7 @@ var url = 'consultar.php';   //este es el PHP al que se llama por AJAX
         data: data,   //acá están todos los parámetros (valores a enviar) del POST
         success: function(response){
           $('fecha_range').removeAttr("hidden");
-          $('echa_caja').removeAttr("hidden");
+          $('fecha_caja').removeAttr("hidden");
           recorreConsulta(response, context, canvas);
         },
    dataType:"json"

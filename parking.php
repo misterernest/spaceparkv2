@@ -21,6 +21,7 @@
   <script type="text/javascript" src="./js/zoom_mapa.js"></script>
   <script type="text/javascript" src="./js/eliminar_elemento.js"></script>
   <script type="text/javascript" src="./js/cerrar_sesion.js"></script>
+  <script type="text/javascript" src="./js/deshacer.js"></script>
   <!-- <script type="text/javascript" src="./js/mover_elemento.js"></script> -->
   <script type="text/javascript" src="./js/efect_mousemove.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
@@ -43,7 +44,7 @@
     <img src="img/lupa-mas.png" alt="lupa-zoom-in" id="zoom-in">
     <img src="img/lupa-menos.png" alt="lupa-zoom-out" id="zoom-out" hidden="hidden">
   </div>
-  <div class="btn-park btn-inactivo btn-rollback" id="atras">
+  <div class="btn-park btn-inactivo btn-rollback" id="deshacer">
     <img src="img/deshacer.png" alt="lupa-zoom-in" id="zoom-in">
   </div>
   <div class="btn-park btn-mover1" id="mover">

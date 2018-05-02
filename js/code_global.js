@@ -5,6 +5,7 @@ const height=1598;
 let zoom_proporcion;
 let zoom_width ;
 let zoom_height;
+let btn_deshacer = false;
 $(document).ready(function(){
     zoom_proporcion = $('#container-canvas').width() / width;
     zoom_width = width * zoom_proporcion;
