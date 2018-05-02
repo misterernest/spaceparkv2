@@ -113,7 +113,6 @@ $(document).ready(function(){
          coordenadaTemp[0][9] = $("#cliente").val();
          coordenadaTemp[0][10] = 0;
          coordenadaTemp[0][11] = $("#comentario").val();
-
          llenaMatriz(coordenadaTemp[0][2] , coordenadaTemp[0][3]);
          if (coordenadaTemp[0].length > 2 ) {
            if (validaEspacioInterno()) {

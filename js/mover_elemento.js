@@ -139,7 +139,7 @@ $(document).ready(function(){
         $("#time1").val(coordenadaTemp[5].slice(11));
         $("#categoria").val(coordenadaTemp[8]);
         $("#cliente").val(coordenadaTemp[7]);
-        $("#comentario").val(coordenadaTemp[11]);
+        $("#comentario").html(coordenadaTemp[11]);
         $('#modal').modal('show');
         $("#guardar").click(function(){
           anchoCuadro = $("#anchoX").val();

@@ -1,16 +1,16 @@
-<?php 
+<?php
 require_once 'config.php';
 
 //se trae la consulta
 $query="SELECT * FROM cache WHERE id_cache=(SELECT MAX(id_cache) FROM cache)";
 $prepared = $pdo->query($query);
-$resultado = $prepared->fetchAll(PDO::FETCH_ASSOC);
+$resultado = $prepared->fetch(PDO::FETCH_ASSOC);
 $prepared=null;
 
 //var_dump($resultado);
 
-$query2= $resultado[0]['consulta'];
-$id=$resultado[0]['id_cache'];
+$query2= $resultado['consulta'];
+$id=$resultado['id_cache'];
 //aqui se ejecuta
 $prepared = $pdo->prepare($query2);
 $resultado2 = $prepared->execute();

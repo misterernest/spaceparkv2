@@ -11,9 +11,9 @@ if (isset($_POST['id']) && !empty($_POST['id']) &&
 
 
  $query = "
- UPDATE reserva
+ UPDATE area_ocupada
  SET categoria=:categoria, cliente=:cliente, comentario=:comentario
- WHERE id_reserva=:id
+ WHERE id=:id
  ";
  $statement = $pdo->prepare($query);
  $statement->execute(
