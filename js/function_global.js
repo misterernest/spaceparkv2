@@ -92,8 +92,7 @@ function deshacerButton(){
 }
 /* Recorre el objeto de consulta */
 function recorreConsulta(arrayConsulta, context, canvas){
-  respuestaConsulta = arrayConsulta[0];
-  cantDeshacer = arrayConsulta[1][0];
+  respuestaConsulta = arrayConsulta;
   deshacerButton();
   let fechaInicialArray = new Date();
   let fechaFinalArray = new Date();
@@ -130,7 +129,8 @@ var url = 'consultar.php';   //este es el PHP al que se llama por AJAX
         success: function(response){
           $('fecha_range').removeAttr("hidden");
           $('echa_caja').removeAttr("hidden");
-          recorreConsulta(response, context, canvas);
+          cantDeshacer = response[1][0];
+          recorreConsulta(response[0], context, canvas);
         },
    dataType:"json"
     });

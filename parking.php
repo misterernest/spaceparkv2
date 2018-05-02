@@ -21,6 +21,7 @@
   <script type="text/javascript" src="./js/zoom_mapa.js"></script>
   <script type="text/javascript" src="./js/eliminar_elemento.js"></script>
   <script type="text/javascript" src="./js/cerrar_sesion.js"></script>
+  <script type="text/javascript" src="./js/deshacer.js"></script>
   <!-- <script type="text/javascript" src="./js/mover_elemento.js"></script> -->
   <script type="text/javascript" src="./js/efect_mousemove.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />

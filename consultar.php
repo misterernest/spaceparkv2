@@ -27,11 +27,12 @@ if ( isset($_POST['date']) && !empty($_POST['date']) && isset($_POST['dias']) &&
 	$prepared = $pdo->query($query);
 	$resultado[0] = $prepared->fetchAll(PDO::FETCH_ASSOC);
 	$prepared = null;
-
+	$resultado[1]=0;
 	$sql="SELECT COUNT(id_cache) FROM cache";
 	$prepared = $pdo->prepare($sql);
 	$prepared->execute();
-	$resultado[1]= $prepared->fetch(PDO::FETCH_NUM);
+	$resultadoDeshacer= $prepared->fetch(PDO::FETCH_NUM);
+	$resultado[1] = ($resultadoDeshacer== NULL)?0:$resultadoDeshacer;
 	echo json_encode($resultado);
 }
 ?>
