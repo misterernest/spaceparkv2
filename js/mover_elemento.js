@@ -130,7 +130,6 @@ $(document).ready(function(){
       $('#confirm1').modal('show'); */
 
         $('#confirm1').modal('hide');
-        console.log(coordenadaTemp);
         $("#anchoX").val(coordenadaTemp[2]);
         $("#largoY").val(coordenadaTemp[3]);
         $("#date").val(coordenadaTemp[4].slice(0, 10));
