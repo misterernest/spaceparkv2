@@ -19,20 +19,22 @@ if ( isset($_POST['date']) && !empty($_POST['date']) && isset($_POST['dias']) &&
 	require_once 'config.php';
 
 	// insert
-    $query = "SELECT * FROM area_ocupada WHERE fecha_incial BETWEEN '$nuevafechai' AND '$nuevafechaf' OR fecha_final BETWEEN '$nuevafechai' AND '$nuevafechaf '";
+  $query = "SELECT * FROM area_ocupada WHERE fecha_incial BETWEEN '$nuevafechai' AND '$nuevafechaf' OR fecha_final BETWEEN '$nuevafechai' AND '$nuevafechaf '";
 	/*if(!empty($categoria)){
 		$query = $query . " AND categoria LIKE '$categoria'";
 	}*/
 
-    $prepared = $pdo->query($query);
-	$resultado = $prepared->fetchAll(PDO::FETCH_NUM);
-    $prepared = null;
 
-		$sql="SELECT COUNT(id_cache) FROM cache";
-		$prepared = $pdo->prepare($sql);
-	    $prepared->execute();
-	    $resultado1= $prepared->fetch(PDO::FETCH_NUM);
-			$resultado['deshacer'] = $resultado1;
+	$prepared = $pdo->query($query);
+	$resultado[0] = $prepared->fetchAll(PDO::FETCH_ASSOC);
+	$prepared = null;
+	$resultado[1]=0;
+	$sql="SELECT COUNT(id_cache) FROM cache";
+	$prepared = $pdo->prepare($sql);
+	$prepared->execute();
+	$resultadoDeshacer= $prepared->fetch(PDO::FETCH_NUM);
+	$resultado[1] = ($resultadoDeshacer== NULL)?0:$resultadoDeshacer;
+
 	echo json_encode($resultado);
 }
 ?>

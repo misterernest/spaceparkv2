@@ -67,7 +67,7 @@ let zoom = false;
 
 // cooredenada que vienen de la base de datos, ya estan almacenadas
   let respuestaConsulta = new Array();
-
+  let cantDeshacer = 0;
 // coordenadas para delimitar la bodega
   const areaDisponible1 = Array(
     [217, 349],
