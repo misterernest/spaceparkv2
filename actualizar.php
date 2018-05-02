@@ -65,11 +65,11 @@ isset($_POST['comentario']))  {
 
 		if ($valido) {
 			// Sentencia query para deshacer
-			$contraquery= "DELETE FROM `area_ocupada` ";
-			$contraquery.="WHERE coordenada_x =`$xPost` ";
-			$contraquery.="AND coordenada_y = `$yPost` ";
-			$contraquery.="AND fecha_incial = `$date` ";
-			$contraquery.="AND fecha_final = `$date2 $time2`;";
+			$contraquery= "DELETE FROM area_ocupada ";
+			$contraquery.="WHERE coordenada_x =$xPost ";
+			$contraquery.="AND coordenada_y = $yPost ";
+			$contraquery.="AND fecha_incial = \'$date\' ";
+			$contraquery.="AND fecha_final = \'$date2 $time2\';";
 			// termina proceso cache Insert
 			//insert
 
@@ -91,12 +91,7 @@ isset($_POST['comentario']))  {
 			$resulti = $prepared->execute();
 			$prepared = null;
 			// Sentencia query para deshacer
-			$contraquery.= "UPDATE area_ocupada
-				SET fecha_final=\'$fechaf\',
-				cliente=\'$cliente\',
-				categoria=\'$categoria\',
-				comentario=\'$comentario\'
-				WHERE id=\'$id\'";
+			$contraquery.= "UPDATE area_ocupada SET fecha_final=\'$fechaf\', cliente=\'$cliente\', categoria=\'$categoria\', comentario=\'$comentario\' WHERE id=$id";
 			// termina proceso cache Update
 			// update anterior reserva
 			$queryu = "UPDATE area_ocupada
@@ -113,13 +108,13 @@ isset($_POST['comentario']))  {
 		}else{
 			// Sentencia query para deshacer
 			$contraquery.= "UPDATE area_ocupada
-			SET coordenada_x=\'$coordenadaX\',
-			coordenada_y=\'$coordenadaY\',
+			SET coordenada_x=$coordenadaX,
+			coordenada_y=$coordenadaY,
 			fecha_final=\'$fechaf\',
 			cliente=\'$cliente\',
 			categoria=\'$categoria\',
 			comentario=\'$comentario\'
-			WHERE id=\'$id\'";
+			WHERE id=$id";
 			// termina proceso cache Update
 
 			$queryu = "UPDATE area_ocupada
@@ -144,7 +139,7 @@ isset($_POST['comentario']))  {
 		cliente=\'$cliente\',
 		categoria=\'$categoria\',
 		comentario=\'$comentario\'
-		WHERE id=\'$id\';";
+		WHERE id=$id;";
 		// termina proceso cache Update
 
 		$queryu = "UPDATE area_ocupada

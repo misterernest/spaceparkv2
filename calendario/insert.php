@@ -7,8 +7,8 @@ $connect = new PDO('mysql:host=localhost;dbname=spaceparking', 'root', '');
 if(isset($_POST["title"]))
 {
  $query = "
- INSERT INTO reserva 
- (title, start_event, end_event) 
+ INSERT INTO area_ocupada 
+ (title, start_event, end_event)
  VALUES (:title, :start_event, :end_event)
  ";
  $statement = $connect->prepare($query);

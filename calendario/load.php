@@ -36,5 +36,4 @@ foreach($result as $row)
 }
 
 echo json_encode($data);
-//echo $row["id_reserva"]." variable";
 ?>

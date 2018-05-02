@@ -67,13 +67,13 @@
       fechaSeleccionada = fechaActual;
       recorreConsulta(respuestaConsulta, context3, canvas3);
 
-      console.log(start._d);
+      //console.log(start._d);
     },
     editable:false,
    eventClick:function(event)
     {
       var id = event.id;
-      console.log(event.categorias);
+      //console.log(event.categorias);
       let fechaStart = new Date(event.start);
       let fechaEnd = new Date(event.end);
       $('#largoY_1').val(event.largo);
@@ -84,7 +84,7 @@
       $('#time_1').val(event.startHora);
       $('#date1_1').val(`${fechaEnd.getFullYear()}-${fechaEnd.getMonth()+1}-${fechaEnd.getDate()+1}`);
       $('#time1_1').val(event.endHora);
-      $('#comentario_1').val(event.comentario);
+      $('#comentario_1').html(event.comentario);
 
       $('#largoY_1').prop('readonly', true);
       $('#anchoX_1').prop('readonly', true);
