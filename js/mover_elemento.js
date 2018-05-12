@@ -183,6 +183,7 @@ $(document).ready(function(){
             $('#modal').modal('hide');
           }
 
+          console.log(fechaRevisar);
           if (valido) {
             coordenadaTemp[2] = $("#anchoX").val();
             coordenadaTemp[3] = $("#largoY").val();
